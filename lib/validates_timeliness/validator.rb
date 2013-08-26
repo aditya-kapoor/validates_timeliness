@@ -105,7 +105,7 @@ module ValidatesTimeliness
     private
 
     def determine_value(value, record)
-      case value.class.to_s
+      case value
       when Proc
         value.arity > 0 ? value.call(record) : value.call
       else
